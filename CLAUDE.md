@@ -14,11 +14,11 @@
 ## What this repo is
 
 The public-facing marketing and landing site for Yggdrasil. Separate from both
-the authenticated web app (Frontend) and the end-user product docs (Docusaurus).
+the authenticated web app (Web) and the end-user product docs (Docusaurus).
 
 - **Role in Yggdrasil:** Landing
 - **Stack:** TBD (marketing site)
-- **Talks to:** No backend integration — static/marketing content only
+- **Talks to:** No API integration — static/marketing content only
 
 ## Suite-wide context (up-links to the meta repo)
 
