@@ -2,25 +2,26 @@
 
 **Read this when:** you're setting up or running this component locally.
 
-> TODO: fill in once the component is scaffolded.
+## Full stack (recommended)
 
-## Prerequisites
-
-> TODO (runtime versions, tooling)
-
-## Install & run
+From the meta repo root:
 
 ```bash
-# TODO
+./setup.sh
+docker compose -f deploy/docker-compose.dev.yml up --build landing
 ```
 
-## Environment variables
+Site: http://localhost:8080/ (via nginx).
 
-> TODO (and note: project-level env injection for containers is an open
-> question — see ../../../docs/roadmap/open-questions.md)
+## This repo only
+
+```bash
+npm install
+npm run dev
+```
 
 ## Tests
 
 ```bash
-# TODO
+npm test
 ```
