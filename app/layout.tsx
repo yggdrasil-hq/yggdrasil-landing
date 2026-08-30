@@ -1,8 +1,28 @@
 import type { Metadata } from "next";
+import { Cinzel, Space_Grotesk, JetBrains_Mono } from "next/font/google";
+import "./globals.css";
+
+const cinzel = Cinzel({
+  subsets: ["latin"],
+  variable: "--font-display",
+  weight: ["600", "700"],
+});
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  weight: ["400", "500", "600", "700"],
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  weight: ["400", "500", "600"],
+});
 
 export const metadata: Metadata = {
-  title: "Yggdrasil",
-  description: "AI-orchestrated software development for small teams",
+  title: "Yggdrasil — Secure, self-hosted AI development",
+  description: "AI-orchestrated software development for small teams.",
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "32x32" },
@@ -14,14 +34,23 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en" className="dark">
+      <body
+        className={`${cinzel.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} font-sans antialiased`}
+      >
+        {children}
+      </body>
     </html>
   );
 }

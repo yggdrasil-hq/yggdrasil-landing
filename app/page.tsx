@@ -1,32 +1,27 @@
-import Image from "next/image";
+import { Nav } from "@/components/landing/nav";
+import { Hero } from "@/components/landing/hero";
+import { HowItWorks } from "@/components/landing/how-it-works";
+import { Features } from "@/components/landing/features";
+import { NoLockIn } from "@/components/landing/no-lock-in";
+import { SafeByDefault } from "@/components/landing/safe-by-default";
+import { CtaBand } from "@/components/landing/cta-band";
+import { Footer } from "@/components/landing/footer";
 
+// Full proposed redesign, matching design/landing/index.html — see that
+// file's .design-note for what's real vs. still-proposed in this copy.
 export default function LandingPage() {
   return (
-    <main
-      style={{
-        fontFamily: "system-ui, sans-serif",
-        minHeight: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        gap: "1.5rem",
-        padding: "2rem",
-        background: "#080B11",
-        color: "#E8EEF4",
-      }}
-    >
-      <Image
-        src="/branding/svg/horizontal-lockup.svg"
-        alt="Yggdrasil"
-        width={420}
-        height={186}
-        priority
-        style={{ width: "min(420px, 88vw)", height: "auto" }}
-      />
-      <p style={{ margin: 0, color: "#9FB0C0", textAlign: "center", maxWidth: "36ch" }}>
-        AI-orchestrated software development for small teams.
-      </p>
-    </main>
+    <>
+      <Nav />
+      <main>
+        <Hero />
+        <HowItWorks />
+        <Features />
+        <NoLockIn />
+        <SafeByDefault />
+        <CtaBand />
+      </main>
+      <Footer />
+    </>
   );
 }

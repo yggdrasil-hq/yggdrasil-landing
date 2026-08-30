@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-niflheim text-frost font-sans antialiased overflow-x-hidden;
+  }
+}
