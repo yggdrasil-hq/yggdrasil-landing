@@ -225,9 +225,11 @@ a {
 }
 
 .mkt-nav-inner {
-  display: flex;
+  display: grid;
+  width: 100%;
+  max-width: none;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
   gap: 24px;
   padding: 16px 24px;
 }
@@ -275,6 +277,10 @@ a {
 
 .mkt-nav-actions {
   gap: 10px;
+}
+
+.mkt-nav-actions {
+  justify-self: end;
 }
 
 .mkt-hero {
@@ -690,7 +696,6 @@ a {
 .mkt-step,
 .mkt-feature {
   position: relative;
-  overflow: hidden;
   border: 1px solid var(--rime-soft);
   border-radius: var(--radius-card);
   background: linear-gradient(180deg, rgba(14, 19, 27, 0.9), rgba(14, 19, 27, 0.55));
@@ -781,6 +786,7 @@ a {
 }
 
 .mkt-feature {
+  overflow: hidden;
   padding: 26px 24px;
   background: linear-gradient(180deg, rgba(14, 19, 27, 0.65), rgba(14, 19, 27, 0.3));
 }
