@@ -1,3 +1,4 @@
+import { Reveal } from "@/components/landing/reveal";
 import { SectionHead } from "@/components/landing/section-head";
 
 const items = [
@@ -20,26 +21,19 @@ const items = [
 
 export function NoLockIn() {
   return (
-    <section className="border-t border-rime-soft px-6 py-[clamp(56px,8vw,96px)]">
+    <section className="mkt-section">
       <SectionHead
         kicker="No lock-in"
         title="Your keys. Your infra. Your GitHub."
         body="Nothing here runs on an account, a cluster, or a model provider you don't already control."
       />
-      <div className="mx-auto grid max-w-[960px] grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mkt-features mkt-features-compact">
         {items.map((item) => (
-          <div
-            key={item.tag}
-            className="rounded-card border border-rime-soft p-6"
-          >
-            <span className="inline-flex h-9 w-9 items-center justify-center rounded-sm border border-rime bg-surface-02 font-mono text-[10px] text-bifrost">
-              {item.tag}
-            </span>
-            <h3 className="mt-4 text-base text-frost">{item.title}</h3>
-            <p className="mt-2 text-[13px] leading-[1.55] text-mist">
-              {item.body}
-            </p>
-          </div>
+          <Reveal key={item.tag} className="mkt-feature">
+            <span className="icon icon-text">{item.tag}</span>
+            <h3>{item.title}</h3>
+            <p>{item.body}</p>
+          </Reveal>
         ))}
       </div>
     </section>

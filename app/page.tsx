@@ -12,6 +12,9 @@ import { Footer } from "@/components/landing/footer";
 export default function LandingPage() {
   return (
     <>
+      <div className="mkt-bg" aria-hidden="true">
+        <div className="mkt-grain" />
+      </div>
       <Nav />
       <main>
         <Hero />

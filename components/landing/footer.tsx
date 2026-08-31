@@ -1,46 +1,48 @@
 import { YggdrasilLogo } from "@/components/brand/yggdrasil-logo";
 
-const LOGIN_HREF = "/app/login";
-
 export function Footer() {
   return (
-    <footer className="border-t border-rime-soft px-6 py-10">
-      <div className="mx-auto flex max-w-content flex-wrap items-start justify-between gap-8">
-        <div>
+    <footer className="mkt-footer">
+      <div className="mkt-footer-inner">
+        <div className="mkt-footer-brand">
           <YggdrasilLogo />
-          <p className="mt-2.5 max-w-[32ch] text-[13px] text-shadow">
-            Secure, self-hosted AI development for small teams. Every change
-            is isolated, scoped, reviewed, and tested before it ships.
+          <p>
+            Secure, self-hosted AI development for small teams. Every change is
+            isolated, scoped, reviewed, and tested before it ships.
           </p>
         </div>
-        <div className="flex flex-wrap gap-14">
-          <div>
-            <div className="text-xs font-semibold uppercase tracking-[0.08em] text-shadow">
-              Product
-            </div>
-            <ul className="mt-3 flex flex-col gap-2">
-              <li>
-                <a href="#how-it-works" className="text-[13px] text-mist hover:text-frost">
-                  How it works
-                </a>
-              </li>
-              <li>
-                <a href="#features" className="text-[13px] text-mist hover:text-frost">
-                  Features
-                </a>
-              </li>
-              <li>
-                <a href={LOGIN_HREF} className="text-[13px] text-mist hover:text-frost">
-                  Sign in
-                </a>
-              </li>
+        <div className="mkt-footer-cols">
+          <div className="mkt-footer-col">
+            <div className="heading">Product</div>
+            <ul>
+              <li><a href="#how-it-works">How it works</a></li>
+              <li><a href="#features">Features</a></li>
+              <li><a href="https://app.yggdrasil.cfd">Open the app</a></li>
+            </ul>
+          </div>
+          <div className="mkt-footer-col">
+            <div className="heading">Resources</div>
+            <ul>
+              <li><a href="https://docs.yggdrasil.cfd">Documentation</a></li>
+              <li><a href="https://github.com/yggdrasil-hq/yggdrasil-core">GitHub</a></li>
+            </ul>
+          </div>
+          <div className="mkt-footer-col">
+            <div className="heading">Legal</div>
+            <ul>
+              <li><a href="/terms">Terms of Service</a></li>
+              <li><a href="/privacy">Privacy Policy</a></li>
             </ul>
           </div>
         </div>
       </div>
-      <p className="mx-auto mt-8 max-w-content border-t border-rime-soft pt-5 text-xs text-shadow">
-        &copy; 2026 Yggdrasil.
-      </p>
+      <div className="mkt-footer-bottom">
+        <span>
+          &copy; 2026 Yggdrasil. All rights reserved. Yggdrasil and the
+          Yggdrasil mark are trademarks of the Yggdrasil project.
+        </span>
+        <span className="mono">Secure, self-hosted AI development</span>
+      </div>
     </footer>
   );
 }

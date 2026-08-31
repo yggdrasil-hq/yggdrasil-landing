@@ -1,3 +1,4 @@
+import { Reveal } from "@/components/landing/reveal";
 import { SectionHead } from "@/components/landing/section-head";
 
 const steps = [
@@ -35,27 +36,22 @@ const steps = [
 
 export function HowItWorks() {
   return (
-    <section
-      id="how-it-works"
-      className="border-t border-rime-soft px-6 py-[clamp(56px,8vw,96px)]"
-    >
+    <section className="mkt-section" id="how-it-works">
       <SectionHead
         kicker="How it works"
         title="Six checkpoints between a description and production"
         body="Nothing skips a step. Nothing merges unreviewed or untested."
       />
-      <div className="mx-auto grid max-w-content grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mkt-steps">
         {steps.map((step) => (
-          <div
-            key={step.n}
-            className="rounded-card border border-rime-soft bg-surface-01 p-6"
-          >
-            <div className="font-mono text-[13px] text-bifrost">{step.n}</div>
-            <h3 className="mt-3.5 text-base text-frost">{step.title}</h3>
-            <p className="mt-2 text-[13px] leading-[1.55] text-mist">
-              {step.body}
-            </p>
-          </div>
+          <Reveal key={step.n} className="mkt-step">
+            <div className="n">{step.n}</div>
+            {step.n !== "03" && step.n !== "06" ? (
+              <span className="arrow">▶</span>
+            ) : null}
+            <h3>{step.title}</h3>
+            <p>{step.body}</p>
+          </Reveal>
         ))}
       </div>
     </section>

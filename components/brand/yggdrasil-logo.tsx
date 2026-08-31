@@ -4,7 +4,7 @@
 export function YggdrasilLogo({ className }: { className?: string }) {
   return (
     <span
-      className={`inline-flex items-center whitespace-nowrap text-lg font-semibold tracking-[-0.03em] ${className ?? ""}`}
+      className={`logo ${className ?? ""}`}
     >
       <span className="-mr-[0.09em] font-display text-[1.32em] font-bold tracking-[-0.05em] text-bifrost">
         Y

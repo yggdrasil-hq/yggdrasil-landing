@@ -1,3 +1,4 @@
+import { Reveal } from "@/components/landing/reveal";
 import { SectionHead } from "@/components/landing/section-head";
 
 type Feature = {
@@ -56,39 +57,25 @@ const features: Feature[] = [
 
 function FeatureIcon({ icon }: { icon: Feature["icon"] }) {
   const content = "codePoint" in icon ? String.fromCodePoint(icon.codePoint) : icon.text;
-  const textSize = "text" in icon ? "text-[11px]" : "text-sm";
-  return (
-    <span
-      className={`inline-flex h-9 w-9 items-center justify-center rounded-sm border border-rime bg-surface-02 font-mono ${textSize} text-bifrost`}
-    >
-      {content}
-    </span>
-  );
+  const className = "text" in icon ? "icon mono icon-text" : "icon";
+  return <span className={className}>{content}</span>;
 }
 
 export function Features() {
   return (
-    <section
-      id="features"
-      className="border-t border-rime-soft px-6 py-[clamp(56px,8vw,96px)]"
-    >
+    <section className="mkt-section" id="features">
       <SectionHead
         kicker="Security & control"
         title="Built to keep unsafe changes out"
-        body="Every job is isolated, every credential is scoped, every change reviewed and tested."
+        body="Every job runs in isolation. Every credential is scoped to its task. Every change is reviewed and tested before it ships."
       />
-      <div className="mx-auto grid max-w-content grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mkt-features">
         {features.map((feature) => (
-          <div
-            key={feature.title}
-            className="rounded-card border border-rime-soft p-6"
-          >
+          <Reveal key={feature.title} className="mkt-feature">
             <FeatureIcon icon={feature.icon} />
-            <h3 className="mt-4 text-base text-frost">{feature.title}</h3>
-            <p className="mt-2 text-[13px] leading-[1.55] text-mist">
-              {feature.body}
-            </p>
-          </div>
+            <h3>{feature.title}</h3>
+            <p>{feature.body}</p>
+          </Reveal>
         ))}
       </div>
     </section>

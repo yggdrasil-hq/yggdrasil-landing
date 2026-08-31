@@ -1,3 +1,4 @@
+import { Reveal } from "@/components/landing/reveal";
 import { SectionHead } from "@/components/landing/section-head";
 
 const notList = [
@@ -16,43 +17,29 @@ const isList = [
 
 export function SafeByDefault() {
   return (
-    <section className="border-t border-rime-soft px-6 py-[clamp(56px,8vw,96px)]">
+    <section className="mkt-section">
       <SectionHead
         kicker="Safe by default"
         title="No unreviewed code. No standing access. No surprises."
         body="Isolated, reviewed and tested, merged on your terms — without dictating your stack."
       />
-      <div className="mx-auto grid max-w-[880px] grid-cols-1 gap-5 sm:grid-cols-2">
-        <div className="rounded-card border border-rime-soft p-6">
-          <div className="text-xs font-semibold uppercase tracking-[0.08em] text-shadow">
-            Yggdrasil is not
-          </div>
-          <ul className="mt-3.5 flex flex-col gap-2.5">
+      <div className="mkt-compare">
+        <Reveal className="mkt-compare-col no">
+          <div className="label">Yggdrasil is not</div>
+          <ul>
             {notList.map((item) => (
-              <li
-                key={item}
-                className="relative pl-5 text-sm leading-[1.5] text-shadow before:absolute before:left-0 before:content-['–']"
-              >
-                {item}
-              </li>
+              <li key={item}>{item}</li>
             ))}
           </ul>
-        </div>
-        <div className="rounded-card border border-rime bg-surface-01 p-6">
-          <div className="text-xs font-semibold uppercase tracking-[0.08em] text-bifrost">
-            Yggdrasil is
-          </div>
-          <ul className="mt-3.5 flex flex-col gap-2.5">
+        </Reveal>
+        <Reveal className="mkt-compare-col yes">
+          <div className="label">Yggdrasil is</div>
+          <ul>
             {isList.map((item) => (
-              <li
-                key={item}
-                className="relative pl-5 text-sm leading-[1.5] text-mist before:absolute before:left-0 before:text-bifrost before:content-['+']"
-              >
-                {item}
-              </li>
+              <li key={item}>{item}</li>
             ))}
           </ul>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

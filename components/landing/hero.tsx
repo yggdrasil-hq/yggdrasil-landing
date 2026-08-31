@@ -1,90 +1,117 @@
+import { Reveal } from "@/components/landing/reveal";
 import { ButtonLink } from "@/components/ui/button-link";
 
-const LOGIN_HREF = "/app/login";
+const APP_HREF = "https://app.yggdrasil.cfd";
 
 export function Hero() {
   return (
-    <section className="px-6 pb-[clamp(48px,8vw,96px)] pt-[clamp(64px,10vw,120px)] text-center">
-      <span className="inline-flex h-7 items-center gap-2 rounded-pill border border-rime bg-surface-01 px-3.5 text-xs text-mist">
-        <span className="h-1.5 w-1.5 rounded-full bg-bifrost shadow-[0_0_0_3px_rgba(47,212,198,0.18)]" />
-        Secure AI development — not AI slop
-      </span>
+    <section className="mkt-hero">
+      <Reveal as="span" className="mkt-eyebrow">
+        <span className="dot" />
+        Secure, self-hosted AI development
+      </Reveal>
 
-      <h1 className="mx-auto mt-6 max-w-[20ch] text-[clamp(38px,6.4vw,68px)] font-semibold leading-[1.04] tracking-[-0.035em] text-frost">
-        AI-built code you can actually <span className="text-bifrost">trust</span>.
-      </h1>
+      <Reveal className="mkt-hero-title">
+        <h1>
+          AI-built code you can actually <span className="accent">trust</span>.
+        </h1>
+      </Reveal>
 
-      <p className="mx-auto mt-5 max-w-[620px] text-[clamp(15px,1.6vw,18px)] leading-[1.55] text-mist">
-        No unreviewed AI slop. Every feature is planned, built in an isolated
-        environment, reviewed and tested before it merges — self-hosted, on
-        your own infrastructure.
-      </p>
+      <Reveal className="mkt-hero-sub">
+        <p className="sub">
+          Describe a feature in plain language. An agent plans it with you,
+          builds it in an isolated environment, and delivers a tested pull
+          request for your review — all on infrastructure you control.
+        </p>
+      </Reveal>
 
-      <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-        <ButtonLink href={LOGIN_HREF} variant="primary" size="lg">
+      <Reveal className="mkt-cta-row">
+        <ButtonLink href={APP_HREF} variant="primary" size="lg">
           Continue with GitHub
         </ButtonLink>
         <ButtonLink href="#how-it-works" variant="outline" size="lg">
           See how it works
         </ButtonLink>
-      </div>
+      </Reveal>
 
-      <div className="relative mx-auto mt-[clamp(48px,8vw,88px)] max-w-[760px]">
-        <div
-          aria-hidden
-          className="pointer-events-none absolute -inset-[60px] z-0 rounded-full blur-[10px]"
-          style={{
-            background:
-              "radial-gradient(closest-side, rgba(47, 212, 198, 0.16), transparent 70%)",
-          }}
-        />
-        <div className="relative z-10 overflow-hidden rounded-panel border border-rime bg-surface-01 text-left shadow-[0_24px_60px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(191,233,238,0.06)]">
-          <div className="flex items-center gap-4 border-b border-rime-soft bg-surface-02 px-4 py-3">
-            <span className="flex flex-shrink-0 gap-1.5">
-              <span className="h-[9px] w-[9px] rounded-full bg-rime" />
-              <span className="h-[9px] w-[9px] rounded-full bg-rime" />
-              <span className="h-[9px] w-[9px] rounded-full bg-rime" />
+      <Reveal className="mkt-mockup-wrap">
+        <div className="mkt-mockup-glow" />
+        <div className="mkt-float f1">
+          <span className="ic">✓</span>
+          <span>
+            <b>Tests passed</b>
+            <span>12 scenarios, 0 regressions</span>
+          </span>
+        </div>
+        <div className="mkt-float f2">
+          <span className="ic">▮</span>
+          <span>
+            <b>Preview deployed</b>
+            <span>temporary, per run</span>
+          </span>
+        </div>
+        <div className="mkt-mockup">
+          <div className="mkt-chrome">
+            <span className="dots">
+              <span />
+              <span />
+              <span />
             </span>
-            <span className="flex h-6 flex-1 items-center rounded-pill border border-rime-soft bg-surface-01 px-3 font-mono text-[11px] text-shadow">
-              app.yggdrasil.dev/projects/acme-storefront/features/saved-payment-methods
+            <span className="url">
+              <span className="lock em-tint">🔒</span>
+              app.yggdrasil.cfd/projects/acme-storefront/features/saved-payment-methods
             </span>
           </div>
-          <div className="p-5">
-            <div className="mb-4 flex items-center gap-2.5">
-              <h3 className="text-[15px] text-frost">Saved payment methods</h3>
+          <div className="mkt-mockup-body">
+            <div className="mkt-mockup-title-row">
+              <h3>Saved payment methods</h3>
               <span
-                className="inline-flex h-[22px] items-center rounded-pill px-2.5 text-[11px] font-medium"
+                className="badge"
                 style={{ background: "#4f9bf022", color: "#4f9bf0" }}
               >
                 Plan review
               </span>
             </div>
-
-            <div className="mt-0 w-[88%] rounded-sm border border-rime-soft bg-surface-02 p-3">
-              <div className="mb-1 text-[10px] font-medium text-shadow">Agent</div>
-              <p className="m-0 text-[13px] leading-[1.5] text-mist">
+            <div className="bubble">
+              <div className="who">Agent</div>
+              <p>
                 I&rsquo;ll spec out saved payment methods. First — should we
                 support more than one saved card per customer, or just one?
               </p>
             </div>
-            <div className="ml-auto mt-2.5 w-[88%] rounded-sm border border-rime bg-surface-03 p-3">
-              <div className="mb-1 text-[10px] font-medium text-shadow">You</div>
-              <p className="m-0 text-[13px] leading-[1.5] text-mist">
-                Multiple cards, with one marked default.
-              </p>
+            <div className="bubble user">
+              <div className="who">You</div>
+              <p>Multiple cards, with one marked default.</p>
             </div>
-            <div className="mt-2.5 w-[88%] rounded-sm border border-rime-soft bg-surface-02 p-3">
-              <div className="mb-1 text-[10px] font-medium text-shadow">Agent</div>
-              <p className="m-0 text-[13px] leading-[1.5] text-mist">
-                Got it. I&rsquo;ll use a Stripe{" "}
-                <b className="font-medium text-frost">SetupIntent</b> to
-                tokenize the card and store only the payment method id +
-                last4/brand. Writing the ADR now.
+            <div className="bubble">
+              <div className="who">Agent</div>
+              <p>
+                Got it. I&rsquo;ll use a Stripe <b>SetupIntent</b> to tokenize
+                the card and store only the payment method id + last4/brand.
+                Writing the ADR now.
               </p>
             </div>
           </div>
+          <div className="mkt-mockup-status">
+            <span className="mkt-status-chip ok">
+              <span className="d" />
+              preview live
+            </span>
+            <span className="mkt-status-chip ok">
+              <span className="d" />
+              tests 12/12
+            </span>
+            <span className="mkt-status-chip run">
+              <span className="d" />
+              isolated environment
+            </span>
+            <span className="mkt-status-chip idle">
+              <span className="d" />
+              draft PR pending review
+            </span>
+          </div>
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }
